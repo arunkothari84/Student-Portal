@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Student Portal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" href="static/styles/settings.css">
+  <script src="https://kit.fontawesome.com/6cea0067ba.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Student Portal</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <label class="switch">                 <!-- DARK MODE TOGGLE -->
+            <input type="checkbox" onclick="myFunction()">
+            <span class="slider round"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="heading-div">
+    <h1>Student Portal</h1>
+  </div>
+  <div class="container portal-btn">
+    <div class="row">
+      <div class="col-md-6 col-sm-12 toDo-div btn-div" id="todo-box">
+          <i class="fas fa-clipboard-list fa-4x icon" id="todo-icon"></i>
+          <div class="overlay">
+            <div class="text"><a href="ToDo-popup.html">ToDo List</a></div>
+          </div>
+      </div>
+      <div class="col-md-6 col-sm-12 translator-div btn-div" id="translator-box">
+          <i class="fas fa-language fa-4x icon" id="translator-icon"></i>
+          <div class="overlay">
+            <div class="text"><a href="translator-popup.html">Translator</a></div>
+          </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12 dictionary-div btn-div" id="dictionary-box">
+          <i class="fas fa-spell-check fa-4x icon" id="dictionary-icon"></i>
+          <div class="overlay">
+            <div class="text"><a href="dictionary-popup.html">Dictionary</a></div>
+          </div>
+      </div>
+      <div class="col-md-6 col-sm-12 wiki-div btn-div" id="wiki-box">
+          <i class="fab fa-wikipedia-w fa-4x icon" id="wiki-icon"></i>
+          <div class="overlay">
+            <div class="text"><a href="wiki-popup.htm">Wikipedia</a></div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popup window for Wikipedia features -->
+
+  <div class="popup">
+    <div class="popup-content">
+      <i class="far fa-times-circle close"></i>
+      <form action="" method="get">
+      <div class="wrapper">
+        <div class="input-data">
+          <input type="text" id="_word" name="word" required>              <!--animation for the search icon -->
+          <div class="underline">
+          </div>
+          <label><i class="fas fa-search"></i></label>
+        </div>
+      </div>
+      <div class="">
+        <p>{{ wiki['Summary'] }}</p>
+        <p><a id="read-more" style="visibility: {{ visi }}; color:blue; text-decoration: underline; " href="{{ wiki['URL'] }}">Read more</a></p>
+      </div>
+      <input type="submit" class="submit-btn" value="">
+      </form>
+    </div>
+  </div>
+</body>
+
+  <!-- JavaScript tag -->
+
+  <script>
+
+    /***************************POPUP WINDOW FUNCTION*********************/
+    // Funtion for escape key
+  document.onkeyup = function(evt) {
+    evt = evt || window.event;
+    if (evt.key === "Escape") {
+      window.location.href="/";
+    };
+  };
+
+    /*********************DARK MODE FUNCTION*********************/
+
+    function myFunction() {
+      var element = document.body;
+      element.classList.toggle("dark-mode");
+      var element1 = document.getElementById("todo-box");
+      element1.classList.toggle("col-dark-mode");
+      var element2 = document.getElementById("translator-box");
+      element2.classList.toggle("col-dark-mode");
+      var element3 = document.getElementById("dictionary-box");
+      element3.classList.toggle("col-dark-mode");
+      var element4 = document.getElementById("wiki-box");
+      element4.classList.toggle("col-dark-mode");
+      var element5 = document.getElementById("todo-icon");
+      element5.classList.toggle("icon-dark-mode");
+      var element6 = document.getElementById("translator-icon");
+      element6.classList.toggle("icon-dark-mode");
+      var element7 = document.getElementById("dictionary-icon");
+      element7.classList.toggle("icon-dark-mode");
+      var element8 = document.getElementById("wiki-icon");
+      element8.classList.toggle("icon-dark-mode");
+    }
+  </script>
+
+</html>
