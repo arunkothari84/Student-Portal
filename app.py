@@ -2,6 +2,7 @@ from flask import Flask, render_template, redirect, url_for, request,  jsonify
 from dictionary import Dictionary
 from wikipedia import Wiki, PageException
 from translator import Trans
+
 app = Flask(__name__)
 
 
@@ -71,4 +72,4 @@ def dict_return(dictin, visi_noun='hidden', visi_verb='hidden', visi_adj='hidden
                            visi_adj=visi_adj)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
