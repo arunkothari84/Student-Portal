@@ -16,6 +16,9 @@ body {
 h1 {
   text-align: center;
 }
+.bottom-row {
+  margin-bottom: 25px;
+}
 .portal-btn {
   text-align: center;
   color: white;
@@ -269,3 +272,4 @@ input:checked + .slider:before {
 .icon-dark-mode {
   color: black;
 }
+
